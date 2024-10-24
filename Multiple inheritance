@@ -1,0 +1,30 @@
+public class multipleinhertitance {
+
+    //public class Main {
+        public static void main(String[] args) {
+            Lion objl = new Lion();
+            Eagle obje = new Eagle();
+            System.out.println("Example of Multiple Inheritance");
+            System.out.println("First base class: " + obje.getType());
+            System.out.println("Lion: " + objl.getLionInfo());
+            System.out.println("Eagle: " + obje.getEagleInfo());
+        }
+    }
+
+    class Animal {
+        public String getType() {
+            return "Type of animal";
+        }
+    }
+
+    class Lion extends Animal {
+        public String getLionInfo() {
+            return "Eating - Lives in the jungle";
+        }
+    }
+
+    class Eagle extends Animal {
+        public String getEagleInfo() {
+            return "Flying - Flies in the sky";
+        }
+    }
