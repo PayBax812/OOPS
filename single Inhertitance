@@ -1,0 +1,20 @@
+import org.w3c.dom.ls.LSOutput;
+
+public class Inhertitance {
+
+    public static void main(String[] args) {
+        son obj = new son();
+        System.out.println("Age of first class : " + obj.age);
+        System.out.println("Name of Derived class : "+obj.Name);
+    }
+}
+    class father{
+       int age = 45;
+
+    }
+
+
+    class son extends father{
+        String Name = "Wankhede";
+
+    }
