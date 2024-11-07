@@ -1,0 +1,52 @@
+// Superclass
+class Account {
+    double balance;
+    public Account(double balance) {
+        this.balance = balance;
+    }
+    double calculateInterest() {
+        return balance * 0.05;
+    }
+    public void displayBalance() {
+        System.out.println("Account balance: $" + balance);
+    }
+}
+
+
+class SavingsAccount extends Account {
+    public SavingsAccount(double balance) {
+        super(balance);
+    }
+
+    @Override
+    double calculateInterest() {
+        return balance * 0.07;
+    }
+}
+
+
+class CurrentAccount extends Account {
+    public CurrentAccount(double balance) {
+        super(balance);
+    }
+    @Override
+    double calculateInterest() {
+        return balance * 0.03;
+    }
+}
+
+
+public class BankingSystem {
+    public static void main(String[] args) {
+        Account mySavings = new SavingsAccount(1000);
+        Account myCurrent = new CurrentAccount(1000);
+
+
+        mySavings.displayBalance();
+        myCurrent.displayBalance();
+
+
+        System.out.println("Savings Account Interest: $" + mySavings.calculateInterest());
+        System.out.println("Current Account Interest: $" + myCurrent.calculateInterest());
+    }
+}
